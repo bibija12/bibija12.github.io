@@ -10,22 +10,19 @@
           aria-label="Menu"
           @click="leftDrawerOpen = !leftDrawerOpen"
         />
-		</q-toolbar>
+      </q-toolbar>
 
-        <div class="q-px-lg q-pt-xl q-mb-md">
-          <div class="text-h3"><span>Todo</span></div><!--todo-->
-          <div class="text-subtitle1">{{todaysdate}} </div><!--text-subtitle1-->
-        </div><!--q-px-lg-->
+      <div class="q-px-lg q-pt-xl q-mb-md">
+        <div class="text-h3"><span>Todo</span></div>
+        <!--todo-->
+        <div class="text-subtitle1">{{ todaysdate }}</div>
+        <!--text-subtitle1-->
+      </div>
+      <!--q-px-lg-->
 
-        <q-img src = "../assets/mountains.jpg" class="header-image absolute-top">
-
-        </q-img>
-
-
-
+      <q-img src="../assets/mountains.jpg" class="header-image absolute-top">
+      </q-img>
     </q-header>
-
-
 
     <!--Q-DRAWER-->
 
@@ -35,101 +32,89 @@
       :width="250"
       :breakpoint="600"
     >
-      <q-scroll-area style="height: calc(100% - 142px); margin-top: 142px; border-right: 1px solid #ddd">
+      <q-scroll-area
+        style="
+          height: calc(100% - 142px);
+          margin-top: 142px;
+          border-right: 1px solid #ddd;
+        "
+      >
         <q-list padding>
-
-
           <!--Q-ITEM-->
-          <q-item
-            to="/"
-            clickable
-			v-ripple>
+          <q-item to="/" clickable v-ripple>
             <q-item-section avatar>
               <q-icon name="list" />
             </q-item-section>
 
-            <q-item-section>
-             Todo
-            </q-item-section>
+            <q-item-section> Todo </q-item-section>
           </q-item>
           <!--Q-ITEM-->
 
-
           <!--Q-ITEM-->
-          <q-item
-            to="/help"
-			exact
-            clickable
-	     v-ripple>
+          <q-item to="/help" exact clickable v-ripple>
             <q-item-section avatar>
               <q-icon name="help" />
             </q-item-section>
 
-            <q-item-section>
-              Help
-            </q-item-section>
+            <q-item-section> Help </q-item-section>
           </q-item>
           <!--Q-ITEM-->
-
-
         </q-list>
       </q-scroll-area>
 
-      <q-img class="absolute-top" src="../assets/mountains.jpg" style="height: 142px">
+      <q-img
+        class="absolute-top"
+        src="../assets/mountains.jpg"
+        style="height: 142px"
+      >
         <div class="absolute-bottom bg-transparent">
           <q-avatar size="56px" class="q-mb-sm">
-            <img src="../assets/IMG_20200825_180511_773.jpg">
+            <img src="../assets/IMG_20200825_180511_773.jpg" />
           </q-avatar>
-          <div class="text-weight-bold">Abia jany</div>
+          <div class="text-weight-bold">Ábia Rafio jany</div>
           <div>@ Abia__jany</div>
         </div>
       </q-img>
     </q-drawer>
     <q-page-container>
-       <router-view v-slot="{ Component }">
-         <keep-alive>
-           <component :is="Component" />
-         </keep-alive>
-        </router-view>
-         <!--<keep-alive>
+      <router-view v-slot="{ Component }">
+        <keep-alive>
+          <component :is="Component" />
+        </keep-alive>
+      </router-view>
+      <!--<keep-alive>
             <router-view/>
             </keep-alive>-->
-        </q-page-container>
+    </q-page-container>
   </q-layout>
 </template>
 
 <script>
-import { date } from 'quasar'
-
-
+import { date } from "quasar";
 
 export default {
-  name:'MainLayout',
+  name: "MainLayout",
 
-  data () {
+  data() {
     return {
-      leftDrawerOpen: false
-    }
+      leftDrawerOpen: false,
+    };
   },
 
-  computed:{
-    todaysdate(){
+  computed: {
+    todaysdate() {
       let timeStamp = Date.now();
-      return date.formatDate(timeStamp, 'dddd D MMMM');
-    }
-  }
-
-}
-
+      return date.formatDate(timeStamp, "dddd D MMMM");
+    },
+  },
+};
 </script>
 
-
 <style lang="scss">
-.header-image{
+.header-image {
   height: 100%;
-  z-index:-1;
-  opacity:0.2;
-  filter:grayscale(100%);
+  z-index: -1;
+  opacity: 0.2;
+  filter: grayscale(100%);
 }
-
 </style>
