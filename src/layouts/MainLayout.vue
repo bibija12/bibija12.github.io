@@ -69,7 +69,7 @@
       >
         <div class="absolute-bottom bg-transparent">
           <q-avatar size="56px" class="q-mb-sm">
-            <img src="../assets/IMG_20200825_180511_773.jpg" />
+            <img src="../assets/Screenshot_20220619-144421.png" />
           </q-avatar>
           <div class="text-weight-bold">Ábia Rafio jany</div>
           <div>@ Abia__jany</div>
